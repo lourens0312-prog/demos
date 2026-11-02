@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Sue&#x27;s Mobile Pet Spa | Mobile dog grooming in Kempton Park</title>
-<meta name="description" content="The groomer comes to your gate. Sue grooms your dog in a fully kitted van outside your home in and around Kempton Park. No car ride, no kennel wait, no strange dogs. Nervous and first-time dogs are her speciality.">
+<meta name="description" content="The groomer comes to your gate. Sue and her small team groom your dog in a fully kitted van outside your home in and around Kempton Park. No car ride, no kennel wait, no strange dogs. Nervous and first-time dogs are their speciality.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
@@ -97,6 +97,20 @@
   @media (max-width: 860px) { .calm ul { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 520px) { .calm ul { grid-template-columns: 1fr; } }
 
+  /* Proof: six customers' dogs, three of their words. Photos were posted by owners with their reviews. */
+  .proof { padding: 3.5rem 0; }
+  .proof .lede { color: var(--muted); max-width: 40rem; margin-bottom: 1.5rem; }
+  .pack { display: grid; grid-template-columns: repeat(6, 1fr); gap: .6rem; margin-bottom: 2rem; }
+  .pack img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 14px; display: block; background: var(--wash); }
+  .pack img:nth-child(even) { border-radius: 50% 50% 14px 14px; }
+  .quotes { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+  .quotes li { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 1.3rem 1.3rem 1.1rem; display: grid; gap: .6rem; }
+  .quotes blockquote { margin: 0; font-family: var(--head); font-weight: 500; font-size: 1.15rem; line-height: 1.35; color: var(--plum-deep); }
+  .quotes cite { font-style: normal; color: var(--muted); font-size: .9rem; }
+  .social { margin-top: 1.6rem; display: flex; gap: .6rem 1.4rem; flex-wrap: wrap; align-items: center; font-weight: 500; }
+  .social a { color: var(--plum-deep); }
+  @media (max-width: 860px) { .pack { grid-template-columns: repeat(3, 1fr); } .quotes { grid-template-columns: 1fr; } }
+
   /* Hours + area */
   .where { padding: 3.5rem 0; }
   .where .wrap { display: grid; grid-template-columns: 1fr 1.3fr; gap: 2.5rem; align-items: start; }
@@ -124,7 +138,7 @@
   <div class="wrap">
     <a class="brand" href="#top">Sue&#x27;s Mobile Pet Spa</a>
     <nav aria-label="Sections"><ul>
-      <li><a href="#services">Services</a></li>
+      <li><a href="#services">Services</a></li><li><a href="#proof">Reviews</a></li>
       <li><a href="#where">Where we come</a></li>
       <li><a href="#book">Book</a></li>
     </ul></nav>
@@ -137,7 +151,7 @@
     <div class="wrap">
       <div>
         <h1>The groomer comes to your gate.</h1>
-        <p class="lead">Sue grooms your dog in a fully kitted van outside your home in and around Kempton Park. No car ride, no kennel wait, no strange dogs. Nervous and first-time dogs are her speciality.</p>
+        <p class="lead">Sue and her small team groom your dog in a fully kitted van outside your home in and around Kempton Park. No car ride, no kennel wait, no strange dogs. Nervous and first-time dogs are their speciality.</p>
         <div class="ctas">
           <a class="btn wa" href="https://wa.me/27839731929?text=Hi%20Sue%27s%20Mobile%20Pet%20Spa%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote." target="_blank" rel="noopener">WhatsApp Sue</a>
           <a class="btn ghost" href="tel:+27839731929">Call 083 973 1929</a>
@@ -191,7 +205,17 @@
   <section class="calm" aria-labelledby="calm-h">
     <div class="wrap">
       <h2 id="calm-h">Why nervous dogs do fine here</h2>
-      <ul><li>5.0 stars from 71 Google reviews</li><li>Your dog never leaves home</li><li>One groomer, start to finish: Sue</li><li>Patient with nervous and first-time dogs</li></ul>
+      <ul><li>5.0 stars from 71 Google reviews</li><li>Your dog never leaves home</li><li>100% recommended by 27 Facebook reviewers</li><li>Patient with nervous and first-time dogs</li></ul>
+    </div>
+  </section>
+
+  <section class="proof" id="proof" aria-labelledby="proof-h">
+    <div class="wrap">
+      <h2 id="proof-h">Clean dogs, happy owners</h2>
+      <p class="lede">The dogs below belong to customers, who posted the photos with their reviews. The words are theirs too.</p>
+      <div class="pack"><img src="img/dog1.jpg" alt="Yorkie with a white bow after a groom" loading="lazy" width="640" height="640"><img src="img/dog2.jpg" alt="Pekingese, freshly washed, in the kitchen" loading="lazy" width="640" height="640"><img src="img/dog3.jpg" alt="White Pekingese on the patio" loading="lazy" width="640" height="640"><img src="img/dog4.jpg" alt="Golden dog running in the yard" loading="lazy" width="640" height="640"><img src="img/dog5.jpg" alt="Brown dog on a cushion in the sun" loading="lazy" width="640" height="640"><img src="img/dog6.jpg" alt="Close-up of a bow in a groomed coat" loading="lazy" width="640" height="640"></div>
+      <ul class="quotes"><li><blockquote>“The staff was so professional and loving. My babies look very dapper!”</blockquote><cite>Google review</cite></li><li><blockquote>“They came right to my home and provided the most gentle, professional service.”</blockquote><cite>Google review</cite></li><li><blockquote>“How calmly and efficiently your team got through all 9 dogs. Thank you for the patience and gentle approach with Rachel.”</blockquote><cite>Facebook review, January 2026</cite></li></ul>
+      <p class="social"><span>★ 5.0 on Google from 71 reviews</span><span><a href="https://www.facebook.com/Suespetspa" target="_blank" rel="noopener">Facebook</a>: 1K followers, 100% recommend (27 reviews)</span><span><a href="https://www.instagram.com/sues_mobile_pet_spa/" target="_blank" rel="noopener">Instagram</a>: 351 posts</span></p>
     </div>
   </section>
 
@@ -201,7 +225,7 @@
         <h2>Hours and area</h2>
         <table><tbody><tr><th>Monday – Friday</th><td>08:00 – 16:30</td></tr><tr><th>Saturday</th><td>Ask</td></tr><tr><th>Sunday</th><td>Closed</td></tr></tbody></table>
         <p style="margin-top:1rem">Based in Kempton Park. We come to you.</p>
-        <p>Sue&#x27;s Mobile Pet Spa is owner-run: Sue arrives, grooms your dog in the van at your gate, and leaves it clean, dry and calm. Prices depend on size and coat, so send a photo on WhatsApp and you get a price back. Service names and suburbs on this page are to be confirmed by Sue.</p>
+        <p>Sue&#x27;s Mobile Pet Spa is owner-run: the van arrives, your dog is groomed at your gate, and comes back inside clean, dry and calm. Prices depend on size and coat, so send a photo on WhatsApp and you get a price back. Service names and suburbs on this page are to be confirmed by Sue.</p>
         <p><a href="https://www.facebook.com/Suespetspa" target="_blank" rel="noopener">Facebook</a></p>
       </div>
       <iframe title="Kempton Park and surrounds" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
