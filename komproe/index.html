@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Komproe Tuisnywerheid | Tuisnywerheid, Van Riebeeck Park, Kempton Park</title>
-<meta name="description" content="Tuisgebak soos by die huis. Verjaarsdagkoeke, kolwyntjies, melktert en koffie, al meer as 20 jaar in Van Riebeeck Park. Bestel jou koek op WhatsApp, ons bak dit vars.">
+<meta name="description" content="Tuisgebak soos by die huis. Verjaarsdagkoeke, kolwyntjies, melktert en koffie, al meer as 20 jaar in Van Riebeeck Park. Nie &#x27;n bakkery nie: 23 baksters, elkeen met haar eie spesialiteit. Bestel jou koek op WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400;9..144,600;9..144,700,100&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
@@ -100,6 +100,19 @@
   .oor li { padding-left: 1.5rem; position: relative; }
   .oor li::before { content: ""; position: absolute; left: 0; top: .5em; width: .7rem; height: .7rem; background: var(--blou); border-radius: 2px; }
 
+  /* Resensies: ses foto's uit hul Google-lys op 'n gingham-mat, drie klante se woorde in Fraunces. */
+  .resensies .mat { padding: .75rem; border-radius: 10px; }
+  .resensies .rak { display: grid; grid-template-columns: repeat(6, 1fr); gap: .6rem; }
+  .resensies .rak img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; display: block; border-radius: 6px; background: var(--room); border: 3px solid var(--wit); }
+  .resensies .lede { color: var(--grys); max-width: 56ch; margin: 0 0 1.25rem; }
+  .gesê { list-style: none; margin: 2.25rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .gesê li { border-top: 3px solid var(--konfyt); padding-top: .9rem; }
+  .gesê blockquote { margin: 0; font-family: Fraunces, serif; font-size: 1.25rem; line-height: 1.3; font-weight: 500; }
+  .gesê cite { display: block; font-style: normal; margin-top: .6rem; font-size: .9rem; color: var(--grys); }
+  .telling { margin: 1.75rem 0 0; font-weight: 700; }
+  .telling a { color: var(--blou); }
+  @media (max-width: 800px) { .resensies .rak { grid-template-columns: repeat(3, 1fr); } .gesê { grid-template-columns: 1fr; gap: 1.25rem; } }
+
   .vind { background: var(--room); }
   .vind .wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 2rem; align-items: stretch; }
   .vind address { font-style: normal; display: grid; gap: .5rem; align-content: start; }
@@ -133,6 +146,7 @@
     <nav>
       <a href="#bak">Wat ons bak</a>
       <a href="#ure">Ure</a>
+      <a href="#resensies">Resensies</a>
       <a href="#vind">Vind ons</a>
       <a class="btn btn-wa" href="#bestel">Bestel &#x27;n koek</a>
     </nav>
@@ -144,11 +158,11 @@
     <div class="wrap">
       <div>
         <h1>Tuisgebak <em>soos by die huis,</em> in Van Riebeeck Park.</h1>
-        <p class="lead">Verjaarsdagkoeke, kolwyntjies, melktert en koffie, al meer as 20 jaar in Van Riebeeck Park. Bestel jou koek op WhatsApp, ons bak dit vars.</p>
+        <p class="lead">Verjaarsdagkoeke, kolwyntjies, melktert en koffie, al meer as 20 jaar in Van Riebeeck Park. Nie &#x27;n bakkery nie: 23 baksters, elkeen met haar eie spesialiteit. Bestel jou koek op WhatsApp.</p>
         <p class="lead-en en">Home-baked cakes, cupcakes, milk tart and coffee in Kempton Park for over 20 years. Order your cake on WhatsApp.</p>
         <div class="cta">
-          <a class="btn btn-wa" href="https://wa.me/27119762597?text=Hallo%20Komproe%2C%20ek%20wil%20graag%20%27n%20koek%20bestel." target="_blank" rel="noopener">Bestel op WhatsApp</a>
-          <a class="btn btn-line" href="tel:+27119762597">Bel 011 976 2597</a>
+          <a class="btn btn-wa" href="https://wa.me/27824616887?text=Hallo%20Komproe%2C%20ek%20wil%20graag%20%27n%20koek%20bestel." target="_blank" rel="noopener">Bestel op WhatsApp</a>
+          <a class="btn btn-line" href="tel:+27824616887">Bel 082 461 6887</a>
         </div>
         <a class="rating" href="https://www.google.com/maps/place/Komproe+Tuisnywerheid/@-26.0801475,28.2206221,17z/data=!4m6!3m5!1s0x1e9514abec4534a9:0xe5dbbac902768368!8m2!3d-26.0801475!4d28.2206221!16s%2Fg%2F11b7q93hr0" target="_blank" rel="noopener"><span class="stars">★★★★★</span> 4.3 on Google <small>(120 reviews)</small></a>
       </div>
@@ -190,7 +204,7 @@
   <section class="bak" id="bak">
     <div class="wrap">
       <div class="sec-head"><h2>Wat ons bak</h2><span class="en">What we bake</span></div>
-      <ul class="menu"><li><span class="mn">Verjaarsdagkoeke</span><span class="ml" aria-hidden="true"></span><span class="mm">bestel 3 dae vooruit</span><small>Custom birthday cakes. Jou tema, jou smaak, groot genoeg vir die hele partytjie.</small></li><li><span class="mn">Kolwyntjies</span><span class="ml" aria-hidden="true"></span><span class="mm">ook op kort kennisgewing</span><small>Cupcakes, per dosyn. Vir die skool, die kantoor of die doop.</small></li><li><span class="mn">Melktert en koeksisters</span><span class="ml" aria-hidden="true"></span><span class="mm">op die rak</span><small>Milk tart and koeksisters, baked here, on the shelf most days.</small></li><li><span class="mn">Beskuit</span><span class="ml" aria-hidden="true"></span><span class="mm">op die rak</span><small>Rusks for the coffee. Karringmelk en muesli.</small></li><li><span class="mn">Pasteie en soutgebak</span><span class="ml" aria-hidden="true"></span><span class="mm">op die rak</span><small>Pies and savouries for lunch or the braai.</small></li><li><span class="mn">Koffie en kinderhoekie</span><span class="ml" aria-hidden="true"></span><span class="mm">sit en kuier</span><small>Coffee while you shop, and a corner for the kids.</small></li></ul>
+      <ul class="menu"><li><span class="mn">Verjaarsdagkoeke</span><span class="ml" aria-hidden="true"></span><span class="mm">bestel 3 dae vooruit</span><small>Custom birthday cakes. Jou tema, jou smaak, groot genoeg vir die hele partytjie.</small></li><li><span class="mn">Kolwyntjies</span><span class="ml" aria-hidden="true"></span><span class="mm">ook op kort kennisgewing</span><small>Cupcakes, per dosyn. Vir die skool, die kantoor of die doop.</small></li><li><span class="mn">Melktert en koeksisters</span><span class="ml" aria-hidden="true"></span><span class="mm">op die rak</span><small>Milk tart and koeksisters, baked here, on the shelf most days.</small></li><li><span class="mn">Beskuit</span><span class="ml" aria-hidden="true"></span><span class="mm">op die rak</span><small>Rusks for the coffee. Karringmelk en muesli.</small></li><li><span class="mn">Pasteie en soutgebak</span><span class="ml" aria-hidden="true"></span><span class="mm">ook platters vir geleenthede</span><small>Pies and savouries for lunch or the braai. Sout- en soetplatters op bestelling.</small></li><li><span class="mn">Koffie en kinderhoekie</span><span class="ml" aria-hidden="true"></span><span class="mm">sit en kuier</span><small>Coffee while you shop, and a corner for the kids.</small></li></ul>
     </div>
   </section>
 
@@ -202,9 +216,19 @@
     <div class="wrap">
       <div>
         <div class="sec-head"><h2>Oor ons</h2><span class="en">About us</span></div>
-        <p>Komproe Tuisnywerheid is &#x27;n tuisnywerheid in Soutpansbergrylaan, Van Riebeeck Park, in &#x27;n huis wat &#x27;n winkel geword het. Home industry in Van Riebeeck Park, Kempton Park. Produkte en pryse op hierdie blad moet nog deur die eienaar bevestig word.</p>
+        <p>Komproe Tuisnywerheid is &#x27;n tuisnywerheid in Soutpansbergrylaan, Van Riebeeck Park, in &#x27;n huis wat &#x27;n winkel geword het. Nie &#x27;n bakkery nie: 23 tuisbaksters bak elkeen haar eie spesialiteit, van groot koeke en kaaskoeke tot glasuurkoekies, konfyt en platters vir geleenthede. Home industry in Van Riebeeck Park, Kempton Park. Produkte en pryse op hierdie blad moet nog deur die eienaar bevestig word.</p>
       </div>
-      <ul><li>4.3 sterre uit 120 Google resensies</li><li>Meer as 20 jaar in Van Riebeeck Park</li><li>Alles word hier gebak, nie aangery nie</li><li>Bestel op WhatsApp, kom haal by die deur</li></ul>
+      <ul><li>4.3 sterre uit 120 Google-resensies</li><li>Meer as 20 jaar in Van Riebeeck Park</li><li>23 baksters, elkeen met haar eie spesialiteit</li><li>Bestel op WhatsApp, kom haal by die deur</li></ul>
+    </div>
+  </section>
+
+  <section class="resensies" id="resensies">
+    <div class="wrap">
+      <div class="sec-head"><h2>Uit die winkel</h2><span class="en">From the shop</span></div>
+      <p class="lede">Ses foto's uit hul Google-lys: die toonbank, die koeke en die rakke. Klante noem die vars koeke en die vriendelike personeel die meeste. Six photos from their Google listing; fresh cakes and friendly staff are what the reviews mention most.</p>
+      <div class="mat gingham"><div class="rak"><img src="img/winkel1.jpg" alt="Bakke beskuit, koekies en soutgebak op die toonbank" loading="lazy" width="640" height="640"><img src="img/winkel2.jpg" alt="Groot koeke onder glas" loading="lazy" width="640" height="640"><img src="img/winkel3.jpg" alt="Koeke en 'n ruiker op die vertoontafel" loading="lazy" width="640" height="640"><img src="img/winkel4.jpg" alt="Die rakke vol tuisgebak" loading="lazy" width="640" height="640"><img src="img/winkel5.jpg" alt="Geskenkkoeke met linte" loading="lazy" width="640" height="640"><img src="img/winkel6.jpg" alt="Die winkel van binne" loading="lazy" width="640" height="640"></div></div>
+      <ol class="gesê"><li><blockquote>“We got a superb custom made minion birthday cake from here. It served 40 people comfortably.”</blockquote><cite>Shana, Google-resensie</cite></li><li><blockquote>“I ordered custom made cupcakes on a very short notice and wow they really went out of their way to help me out.”</blockquote><cite>Marietjie, Google-resensie</cite></li><li><blockquote>“Great variety. Great prices. Very neat & organized. Excellent service!”</blockquote><cite>Bavino, Google-resensie</cite></li></ol>
+      <p class="telling">★ 4.3 op Google uit 120 resensies · <a href="https://www.facebook.com/p/Komproe-Tuisnywerheid-100058271634985/" target="_blank" rel="noopener">Komproe Tuisnywerheid op Facebook</a>, 1 000+ volgers</p>
     </div>
   </section>
 
@@ -213,7 +237,7 @@
       <address>
         <div class="sec-head"><h2>Vind ons</h2><span class="en">Find us</span></div>
         <span>105 Soutpansberg Dr, Van Riebeeck Park, Kempton Park</span>
-        <a href="tel:+27119762597">011 976 2597</a>
+        <a href="tel:+27824616887">082 461 6887</a>
         <a href="https://www.google.com/maps/search/?api=1&query=105%20Soutpansberg%20Dr%2C%20Van%20Riebeeck%20Park%2C%20Kempton%20Park" target="_blank" rel="noopener">Maak oop in Google Maps</a>
         <span class="en">Parkeer voor die huis. Park in front of the house.</span>
       </address>
@@ -226,8 +250,8 @@
 <footer><div class="wrap">Komproe Tuisnywerheid, Van Riebeeck Park, Kempton Park. 2026.</div></footer>
 
 <nav class="tapbar" aria-label="Kontak">
-  <a class="wa" href="https://wa.me/27119762597?text=Hallo%20Komproe%2C%20ek%20wil%20graag%20%27n%20koek%20bestel." target="_blank" rel="noopener">WhatsApp</a>
-  <a class="call" href="tel:+27119762597">Bel</a>
+  <a class="wa" href="https://wa.me/27824616887?text=Hallo%20Komproe%2C%20ek%20wil%20graag%20%27n%20koek%20bestel." target="_blank" rel="noopener">WhatsApp</a>
+  <a class="call" href="tel:+27824616887">Bel</a>
 </nav>
 <div class="demo">Demo site made by Lourens Terblanche. Not live yet: details to be confirmed with the owner.</div>
 <script>
@@ -238,7 +262,7 @@ document.getElementById('slipform').addEventListener('submit', e => {
   const datum = d.get('datum') ? new Date(d.get('datum')).toLocaleDateString('af-ZA', { day: 'numeric', month: 'long' }) : 'datum nog oop';
   const naam = (d.get('naam') || '').trim();
   const text = `Hallo Komproe, ek wil graag 'n koek bestel.\n${d.get('geleentheid')}, ${d.get('mense')} mense, ${datum}, ${d.get('smaak')}.` + (naam ? `\nGroete, ${naam}` : '');
-  window.open('https://wa.me/27119762597?text=' + encodeURIComponent(text), '_blank', 'noopener');
+  window.open('https://wa.me/27824616887?text=' + encodeURIComponent(text), '_blank', 'noopener');
 });
 </script>
 </body>
