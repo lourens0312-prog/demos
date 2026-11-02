@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>CARCODES Mobile Mechanic | 24-hour mobile mechanic, Kempton Park</title>
+<meta name="description" content="Stuck in Kempton Park? We come to you. Day or night. Mobile mechanic in Kempton Park, 24 hours. WhatsApp your location and we come to you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --night: #12264F;      /* midnight blue, the hero and the callout card */
+    --night-2: #1B3568;
+    --amber: #FFB000;      /* hazard amber: the one loud colour */
+    --amber-ink: #3A2800;
+    --chalk: #F7F3EA;      /* page paper */
+    --silver: #C9CED6;     /* reflective strip, rules */
+    --ink: #1A1D24;
+    --muted: #5A6170;
+    --wa: #25D366;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: 'Instrument Sans', system-ui, sans-serif; color: var(--ink); background: var(--chalk); line-height: 1.55; }
+  h1, h2, h3, .num, .pill, .clock { font-family: 'Chakra Petch', 'Instrument Sans', sans-serif; }
+  a { color: inherit; }
+  .wrap { width: min(1120px, 100% - 2.5rem); margin: 0 auto; }
+  :focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+
+  /* hazard stripe: the one decorative device, used twice */
+  .hazard { height: 10px; background: repeating-linear-gradient(135deg, var(--amber) 0 18px, var(--ink) 18px 36px); }
+
+  header { background: var(--night); color: #fff; }
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .9rem 0; }
+  .brand { font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 1.15rem; letter-spacing: .02em; text-decoration: none; display: flex; align-items: center; gap: .6rem; }
+  .brand b { display: inline-grid; place-items: center; width: 2rem; height: 2rem; background: var(--amber); color: var(--amber-ink); border-radius: 4px; font-size: .95rem; }
+  .pill { white-space: nowrap; display: inline-flex; align-items: center; gap: .45rem; font-size: .85rem; font-weight: 600; padding: .3rem .7rem; border: 1px solid rgba(255,255,255,.35); border-radius: 999px; }
+  .pill i { width: .6rem; height: .6rem; border-radius: 50%; background: var(--amber); box-shadow: 0 0 0 4px rgba(255,176,0,.25); }
+  .top .call { display: none; text-decoration: none; font-weight: 600; padding: .55rem .9rem; border: 2px solid #fff; border-radius: 6px; }
+  @media (min-width: 760px) { .top .call { display: inline-block; } }
+  @media (max-width: 420px) { .brand { font-size: .95rem; } .pill { font-size: .75rem; padding: .25rem .55rem; } }
+
+  .hero { padding: 2.5rem 0 3.5rem; display: grid; gap: 2rem; }
+  @media (min-width: 900px) { .hero { grid-template-columns: 1.05fr .95fr; align-items: center; gap: 3rem; padding: 3.5rem 0 4.5rem; } }
+  .hero h1 { font-size: clamp(2.2rem, 5.5vw, 3.9rem); line-height: 1.02; margin: 0 0 1rem; letter-spacing: -.01em; }
+  .hero h1 span { color: var(--amber); }
+  .hero p.lede { font-size: 1.1rem; max-width: 36rem; color: #E6EAF2; margin: 0 0 1.25rem; }
+  .clock { font-size: .95rem; color: var(--silver); margin: 0 0 1.5rem; }
+  .clock b { color: var(--amber); font-weight: 700; }
+  .rating { color: #fff; text-decoration: none; display: inline-flex; gap: .5rem; align-items: center; font-weight: 500; }
+  .rating .stars { color: var(--amber); letter-spacing: .05em; }
+  .rating small { color: var(--silver); }
+
+  /* the callout card: the memorable thing */
+  .callout { background: var(--amber); color: var(--amber-ink); border-radius: 12px; padding: 1.4rem; box-shadow: 0 20px 50px rgba(0,0,0,.35); }
+  .callout h2 { margin: 0 0 .25rem; font-size: 1.6rem; line-height: 1.1; }
+  .callout p.sub { margin: 0 0 1rem; font-size: .95rem; }
+  .callout label { display: block; font-weight: 600; font-size: .85rem; margin: .8rem 0 .3rem; }
+  .callout textarea, .callout input { width: 100%; font: inherit; padding: .7rem .8rem; border: 2px solid rgba(58,40,0,.25); border-radius: 8px; background: #FFF7E0; color: var(--ink); }
+  .callout textarea { min-height: 4.2rem; resize: vertical; }
+  .loc { display: grid; grid-template-columns: 1fr auto; gap: .5rem; }
+  .loc button { font: inherit; font-weight: 600; padding: .7rem .9rem; border: 2px solid var(--amber-ink); border-radius: 8px; background: transparent; color: var(--amber-ink); cursor: pointer; white-space: nowrap; }
+  .loc button[aria-busy="true"] { opacity: .6; }
+  .hint { font-size: .8rem; margin: .35rem 0 0; min-height: 1.2em; }
+  .send { display: flex; justify-content: center; align-items: center; gap: .6rem; width: 100%; margin-top: 1rem; padding: 1rem; font: inherit; font-weight: 700; font-size: 1.05rem; border: 0; border-radius: 8px; background: var(--night); color: #fff; cursor: pointer; }
+  .send svg { width: 1.25rem; height: 1.25rem; fill: var(--wa); }
+  .or { text-align: center; font-size: .9rem; margin: .7rem 0 0; }
+  .or a { font-weight: 700; }
+
+  /* suburb ring */
+  .ring { background: var(--silver); padding: 1rem 0; }
+  .ring .wrap { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .ring h2 { margin: 0; font-size: 1rem; white-space: nowrap; }
+  .ring ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem .6rem; }
+  .ring li { font-size: .9rem; padding: .25rem .65rem; background: var(--chalk); border-radius: 999px; }
+  .ring li:last-child::after { content: " and around"; color: var(--muted); }
+
+  section.block { padding: 3.5rem 0; }
+  section.block h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0 0 .5rem; line-height: 1.1; }
+  section.block p.lead { margin: 0 0 1.75rem; max-width: 40rem; color: var(--muted); }
+
+  .faults { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; background: var(--silver); border: 1px solid var(--silver); }
+  @media (min-width: 700px) { .faults { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1000px) { .faults { grid-template-columns: repeat(3, 1fr); } }
+  .faults li { background: var(--chalk); padding: 1.1rem 1.2rem; display: grid; grid-template-columns: 1fr; gap: .15rem; }
+  .faults .mn { font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 1.15rem; }
+  .faults .ml { display: none; }
+  .faults .mm { font-size: .85rem; color: var(--muted); }
+  .faults small { font-size: .95rem; color: var(--ink); }
+
+  .steps { background: var(--night); color: #fff; }
+  .steps ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.5rem; counter-reset: s; }
+  @media (min-width: 760px) { .steps ol { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
+  .steps li { counter-increment: s; border-top: 2px solid var(--amber); padding-top: 1rem; }
+  .steps li::before { content: counter(s, decimal-leading-zero); font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 2rem; color: var(--amber); display: block; line-height: 1; margin-bottom: .4rem; }
+  .steps h3 { margin: 0 0 .3rem; font-size: 1.15rem; }
+  .steps p { margin: 0; color: #E6EAF2; }
+
+  .where { display: grid; gap: 2rem; }
+  @media (min-width: 900px) { .where { grid-template-columns: 1fr 1fr; align-items: start; } }
+  .hours { display: grid; gap: .75rem; margin: 1rem 0 1.5rem; }
+  .hours div { border-left: 4px solid var(--amber); padding: .3rem 0 .3rem .9rem; display: grid; }
+  .hours b { font-family: 'Chakra Petch', sans-serif; font-size: 1.25rem; }
+  .hours span { font-size: .9rem; color: var(--muted); }
+  .addr { margin: 0 0 1rem; }
+  .map { aspect-ratio: 4/3; width: 100%; border: 0; border-radius: 8px; background: var(--silver); }
+
+  footer { padding: 2rem 0 7rem; font-size: .9rem; color: var(--muted); border-top: 1px solid var(--silver); }
+  @media (min-width: 760px) { footer { padding-bottom: 4rem; } }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 2rem; }
+
+  .tapbar { display: none; }
+  @media (max-width: 759px) {
+    .tapbar { display: grid; grid-template-columns: 1fr 1fr; position: fixed; left: 0; right: 0; bottom: var(--demo-h, 2.4rem); z-index: 6; }
+    .tapbar a { display: flex; justify-content: center; align-items: center; gap: .5rem; padding: 1rem; font-weight: 700; text-decoration: none; }
+    .tapbar .wa { background: var(--wa); color: #0b2e1a; }
+    .tapbar .call { background: var(--night); color: #fff; }
+  }
+  .demo { position: fixed; left: 0; right: 0; bottom: 0; z-index: 7; background: #111; color: #eee; font-size: .8rem; text-align: center; padding: .55rem .75rem; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="hazard" aria-hidden="true"></div>
+  <div class="wrap top">
+    <a class="brand" href="#"><b>CC</b> CARCODES Mobile Mechanic</a>
+    <span class="pill"><i aria-hidden="true"></i> On call 24 hours</span>
+    <a class="call" href="tel:+27812191224">Call 081 219 1224</a>
+  </div>
+  <div class="wrap hero">
+    <div>
+      <h1>Stuck in Kempton Park? <span>We come to you.</span> Day or night.</h1>
+      <p class="lede">Mobile mechanics based at 11 Highveld Road, Kempton Park. We read the codes, fit the part and get you going on your own driveway or roadside, 24 hours.</p>
+      <p class="clock" id="clock">Mobile mechanics on call 24 hours, every day.</p>
+      <a class="rating" href="https://www.google.com/maps/place/CARCODES+%28mobile+mechanic%29/data=!4m7!3m6!1s0x1e95154729a9d2d9:0xa2a5dfad6b63a266!8m2!3d-26.089346!4d28.223546!16s%2Fg%2F11nthlz76j" target="_blank" rel="noopener"><span class="stars">★★★★★</span> 4.9 on Google <small>(13 reviews)</small></a>
+    </div>
+    <form class="callout" id="callout" aria-labelledby="co-h">
+      <h2 id="co-h">Stuck right now?</h2>
+      <p class="sub">Two lines and we're on our way with the right part.</p>
+      <label for="what">What happened</label>
+      <textarea id="what" placeholder="e.g. Polo won't start, lights come on, just clicks"></textarea>
+      <label for="where">Where are you</label>
+      <div class="loc">
+        <input id="where" type="text" placeholder="Street or landmark" autocomplete="off">
+        <button type="button" id="locate">Use my location</button>
+      </div>
+      <p class="hint" id="hint"></p>
+      <button class="send" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.5-.3Z"/></svg> Send location on WhatsApp</button>
+      <p class="or">or call <a href="tel:+27812191224">081 219 1224</a></p>
+    </form>
+  </div>
+</header>
+
+<div class="ring">
+  <div class="wrap">
+    <h2>We come to</h2>
+    <ul><li>Kempton Park CBD</li><li>Birchleigh</li><li>Glen Marais</li><li>Edleen</li><li>Norkem Park</li><li>Rhodesfield</li><li>Bonaero Park</li><li>Pomona</li><li>Terenure</li><li>Van Riebeeck Park</li><li>O.R. Tambo</li><li>Esther Park</li></ul>
+  </div>
+</div>
+
+<section class="block" id="faults">
+  <div class="wrap">
+    <h2>What we fix where the car stands</h2>
+    <p class="lead">Tell us the symptom. We bring the tester and the likely part, so most jobs are done in one visit.</p>
+    <ul class="faults"><li><span class="mn">Won&#x27;t start</span><span class="ml" aria-hidden="true"></span><span class="mm">battery, starter, alternator</span><small>Tested on the spot. Most fitted on site.</small></li><li><span class="mn">Warning light on</span><span class="ml" aria-hidden="true"></span><span class="mm">diagnostic code read</span><small>We plug in, read the code and tell you plainly what it means.</small></li><li><span class="mn">Brakes</span><span class="ml" aria-hidden="true"></span><span class="mm">pads, discs, fluid</span><small>Done in your driveway.</small></li><li><span class="mn">Services</span><span class="ml" aria-hidden="true"></span><span class="mm">oil, filters, plugs</span><small>Minor and major services at home or work.</small></li><li><span class="mn">Overheating and leaks</span><span class="ml" aria-hidden="true"></span><span class="mm">thermostat, hoses, pump</span><small>Don&#x27;t drive it hot. Send a photo of the leak.</small></li><li><span class="mn">Pre-purchase check</span><span class="ml" aria-hidden="true"></span><span class="mm">before you pay</span><small>We meet you at the seller and look it over.</small></li></ul>
+  </div>
+</section>
+
+<section class="block steps">
+  <div class="wrap">
+    <h2>How a call-out works</h2>
+    <ol>
+      <li><h3>Send location and fault</h3><p>Use the card above, or WhatsApp us a pin. A photo of the dash or the leak helps.</p></li>
+      <li><h3>Price before we leave</h3><p>We tell you the call-out and the likely part cost up front. No surprises on the kerb.</p></li>
+      <li><h3>We come and fix it</h3><p>On your driveway, at work or roadside. If it needs the workshop, we say so and arrange it.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="block" id="where-we-are">
+  <div class="wrap where">
+    <div>
+      <h2>Hours and base</h2>
+      <div class="hours"><div><b>24 hours</b><span>Every day</span></div><div><b>Ask for the rate first</b><span>Night call-outs</span></div></div>
+      <p class="addr">Based at 11 Highveld Rd, Kempton Park, 1620. We don't need you to come here: we come to you.</p>
+      <p>CARCODES is a small Kempton Park team that fixes cars where they stand. Reviews call us the best mechanics in Kempton and praise fast on-site fitting. Send us your location and what happened, and we tell you what we can do and what it will cost before we leave.</p>
+    </div>
+    <iframe class="map" title="Map of CARCODES Mobile Mechanic" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=11%20Highveld%20Rd%2C%20Kempton%20Park%2C%201620&output=embed"></iframe>
+  </div>
+</section>
+
+<div class="hazard" aria-hidden="true"></div>
+<footer>
+  <div class="wrap">
+    <span>CARCODES Mobile Mechanic, 11 Highveld Rd, Kempton Park, 1620</span>
+    <span><a href="tel:+27812191224">081 219 1224</a></span>
+    <span>© 2026</span>
+  </div>
+</footer>
+
+<nav class="tapbar" aria-label="Quick contact">
+  <a class="wa" href="https://wa.me/27812191224?text=Hi%20CARCODES%20Mobile%20Mechanic%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote." target="_blank" rel="noopener">WhatsApp</a>
+  <a class="call" href="tel:+27812191224">Call</a>
+</nav>
+<div class="demo">Demo site made by Lourens Terblanche. Not live yet: details to be confirmed with the owner.</div>
+
+<script>
+  (function () {
+    // Demo banner height feeds the tapbar so it never hides under the banner.
+    var n = document.querySelector('.demo');
+    var f = function () { document.documentElement.style.setProperty('--demo-h', n.offsetHeight + 'px'); };
+    f(); addEventListener('resize', f);
+
+    // Live clock: "It's 23:14 in Kempton Park. We're on call." Why: a 24-hour promise lands harder with the time on it.
+    var clock = document.getElementById('clock');
+    function tick() {
+      var d = new Date(); var h = String(d.getHours()).padStart(2, '0'), m = String(d.getMinutes()).padStart(2, '0');
+      clock.innerHTML = "It's <b>" + h + ':' + m + "</b> in Kempton Park. We're on call.";
+    }
+    tick(); setInterval(tick, 30000);
+
+    // The callout card writes the WhatsApp message. "Use my location" appends a map pin.
+    var form = document.getElementById('callout'), what = document.getElementById('what'), where = document.getElementById('where');
+    var hint = document.getElementById('hint'), btn = document.getElementById('locate'), pin = '';
+    btn.addEventListener('click', function () {
+      if (!navigator.geolocation) { hint.textContent = 'Your browser has no location. Type a street or landmark.'; return; }
+      btn.setAttribute('aria-busy', 'true'); hint.textContent = 'Finding you…';
+      navigator.geolocation.getCurrentPosition(function (p) {
+        pin = 'https://maps.google.com/?q=' + p.coords.latitude.toFixed(5) + ',' + p.coords.longitude.toFixed(5);
+        btn.removeAttribute('aria-busy'); btn.textContent = 'Pin added'; hint.textContent = 'Your map pin goes in the message.';
+      }, function () {
+        btn.removeAttribute('aria-busy'); hint.textContent = 'Could not get your location. Type a street or landmark.';
+      }, { timeout: 8000 });
+    });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var w = what.value.trim(), l = where.value.trim();
+      var msg = 'Hi CARCODES. ' + (w ? w + '. ' : 'My car is giving trouble. ') +
+                (l ? "I'm at " + l + '. ' : '') + (pin ? 'Pin: ' + pin + ' ' : '') + 'Can you come out?';
+      window.open('https://wa.me/27812191224?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+    });
+  })();
+</script>
+</body>
+</html>

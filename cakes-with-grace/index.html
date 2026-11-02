@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cakes with grace | Custom cakes, Kempton Park</title>
+<meta name="description" content="A cake made for your day. Custom birthday, wedding and celebration cakes, baked to order in Kempton Park. Tell us the day, the number of people and the look you want. We do the rest.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --berry: #3b1f3d; --pistachio: #9cc5a1; --sugar: #f6c9d6; --icing: #fdfcfa; --deep: #7a2b5b;
+    --line: #e6dde4; --mute: #6b5a69;
+    --display: "Gloock", Georgia, serif;
+    --body: "Outfit", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { margin: 0; font: 400 1.0625rem/1.6 var(--body); color: var(--berry); background: var(--icing); }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--deep); outline-offset: 3px; }
+  .wrap { width: min(1080px, 100% - 2.5rem); margin-inline: auto; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 400; letter-spacing: -.01em; }
+
+  header.top { position: sticky; top: 0; z-index: 4; background: var(--icing); border-bottom: 1px solid var(--line); }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .85rem 0; }
+  .brand { font-family: var(--display); font-size: 1.4rem; text-decoration: none; font-variation-settings: "SOFT" 100; }
+  .bar nav { display: flex; align-items: center; gap: 1.25rem; }
+  .bar nav a { text-decoration: none; font-weight: 500; }
+  .bar nav a:not(.btn):hover { text-decoration: underline; text-underline-offset: 5px; }
+  @media (max-width: 720px) { .bar nav a:not(.btn) { display: none; } }
+
+  .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .85rem 1.3rem; border-radius: 6px;
+    font-weight: 700; text-decoration: none; line-height: 1; border: 2px solid var(--berry); font-family: var(--body); font-size: 1rem; cursor: pointer; }
+  .btn svg { width: 18px; height: 18px; }
+  .btn-fill { background: var(--berry); color: var(--icing); }
+  .btn-fill:hover { background: var(--deep); border-color: var(--deep); }
+  .btn-line { background: transparent; }
+  .btn-line:hover { background: var(--sugar); border-color: var(--sugar); }
+
+  /* Hero: words left, the planner right. The planner is the memorable thing. */
+  .hero { padding: 3.5rem 0 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+  .hero h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: 1; margin: 0 0 1.25rem; max-width: 12ch; }
+  .hero p.lead { font-size: 1.15rem; max-width: 40ch; margin: 0 0 1.5rem; color: var(--mute); }
+  .cta { display: flex; flex-wrap: wrap; gap: .75rem; }
+  .rating { display: inline-flex; align-items: center; gap: .5rem; margin-top: 1.5rem; font-weight: 500; text-decoration: none; }
+  .rating .stars { color: var(--deep); letter-spacing: .05em; }
+  .rating small { color: var(--mute); font-weight: 400; }
+  @media (max-width: 860px) { .hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 2.5rem; } }
+
+  /* The planner: a tiered card, like a cake on a stand. */
+  .planner { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 1.5rem 1.5rem 1.25rem; box-shadow: 0 24px 40px -32px rgba(59,31,61,.45); }
+  .planner h2 { margin: 0 0 .25rem; font-size: 1.5rem; }
+  .planner p.sub { margin: 0 0 1.25rem; color: var(--mute); font-size: .95rem; }
+  .planner label { display: block; font-weight: 700; font-size: .9rem; margin: .9rem 0 .35rem; }
+  .planner select, .planner input[type=date] { width: 100%; font: inherit; padding: .7rem .8rem; border: 1.5px solid var(--line); border-radius: 6px; background: var(--icing); color: inherit; }
+  .planner input[type=range] { width: 100%; accent-color: var(--deep); }
+  .serv { display: flex; justify-content: space-between; align-items: baseline; }
+  .serv output { font-family: var(--display); font-size: 1.6rem; font-variation-settings: "SOFT" 100; }
+  .tiers { display: flex; flex-direction: column; align-items: center; gap: 4px; margin: 1.25rem 0 .5rem; min-height: 86px; justify-content: flex-end; }
+  .tiers i { display: block; height: 22px; border-radius: 4px; background: var(--sugar); border: 1.5px solid var(--deep); width: var(--w); transition: width .25s; }
+  .tiers i:nth-child(2) { background: var(--pistachio); }
+  .tiers i:nth-child(3) { background: #fff; }
+  .tiers i:nth-child(4) { background: var(--sugar); }
+  .tiers .stand { height: 6px; width: 70%; background: var(--berry); border-radius: 999px; margin-top: 4px; }
+  .result { background: var(--icing); border-radius: 8px; padding: .9rem 1rem; margin: .75rem 0 1rem; font-size: .98rem; }
+  .result b { font-family: var(--display); font-weight: 400; font-size: 1.15rem; display: block; margin-bottom: .2rem; }
+  .result .warn { color: #8a1c1c; }
+  .planner .btn { width: 100%; justify-content: center; }
+  .planner p.note { margin: .75rem 0 0; font-size: .8rem; color: var(--mute); }
+
+  /* What we bake: a two-column list, meta on the right like a bakery board. */
+  .bake { padding: 3.5rem 0 3rem; }
+  .bake h2, .about h2, .find h2 { font-size: clamp(1.75rem, 3.5vw, 2.4rem); margin: 0 0 1.5rem; }
+  .bake ol { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: 3rem; }
+  .bake li { break-inside: avoid; padding: .9rem 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; column-gap: 1rem; }
+  .bake .mn { font-family: var(--display); font-size: 1.25rem; font-variation-settings: "SOFT" 100; }
+  .bake .ml { display: none; }
+  .bake .mm { color: var(--deep); font-weight: 700; font-size: .9rem; white-space: nowrap; align-self: baseline; }
+  .bake small { grid-column: 1 / -1; color: var(--mute); font-size: .95rem; }
+  .bake p.note { margin: 1.5rem 0 0; font-size: .9rem; color: var(--mute); }
+  @media (max-width: 640px) { .bake ol { columns: 1; } }
+
+  .hours { background: var(--pistachio); color: var(--berry); }
+  .hours .wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; padding: 1.5rem 0; align-items: center; }
+  .hours b { display: block; font-family: var(--display); font-weight: 500; font-size: 1.3rem; font-variation-settings: "SOFT" 100; }
+  .hours .lead { font-size: 1.1rem; }
+  @media (max-width: 600px) { .hours .wrap { grid-template-columns: 1fr; gap: .9rem; } }
+
+  .about { padding: 3.5rem 0; }
+  .about .wrap { display: grid; grid-template-columns: 1.2fr .8fr; gap: 3rem; align-items: start; }
+  .about p { max-width: 56ch; font-size: 1.1rem; margin: 0; }
+  .about ul { list-style: none; padding: 0; margin: 0; }
+  .about ul li { padding: .6rem 0 .6rem 1.4rem; border-top: 1px solid var(--line); position: relative; }
+  .about ul li::before { content: ""; position: absolute; left: 0; top: 1.1rem; width: .65rem; height: .65rem; border-radius: 50%; background: var(--sugar); border: 2px solid var(--deep); }
+  .about ul li:first-child { border-top: 0; }
+  @media (max-width: 800px) { .about .wrap { grid-template-columns: 1fr; gap: 1.5rem; } }
+
+  .find { background: var(--berry); color: var(--icing); padding: 3.5rem 0 4.5rem; }
+  .find .wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 2.5rem; }
+  .find address { font-style: normal; font-size: 1.1rem; }
+  .find address a { display: block; margin: .25rem 0; }
+  .find iframe { width: 100%; aspect-ratio: 4 / 3; border: 0; border-radius: 8px; }
+  @media (max-width: 800px) { .find .wrap { grid-template-columns: 1fr; } }
+
+  footer { padding: 1.25rem 0 6.5rem; color: var(--mute); font-size: .9rem; }
+
+  .tapbar { display: none; }
+  @media (max-width: 720px) {
+    .tapbar { display: grid; grid-template-columns: 1fr 1fr; position: fixed; left: 0; right: 0; bottom: var(--demo-h, 2.4rem); z-index: 6; }
+    .tapbar a { display: flex; justify-content: center; align-items: center; gap: .5rem; padding: 1rem; font-weight: 700; text-decoration: none; }
+    .tapbar .wa { background: #25d366; color: #0b2e1a; }
+    .tapbar .call { background: var(--berry); color: var(--icing); }
+  }
+  .demo { position: fixed; left: 0; right: 0; bottom: 0; z-index: 7; background: #111; color: #eee; font-size: .8rem; text-align: center; padding: .55rem .75rem; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#">Cakes with grace</a>
+    <nav aria-label="Page">
+      <a href="#plan">Plan a cake</a><a href="#bake">What we bake</a><a href="#find">Find us</a>
+      <a class="btn btn-fill" href="https://wa.me/27614518465?text=Hi%20Cakes%20with%20grace%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote." target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap hero">
+    <div>
+      <h1>A cake made for your day.</h1>
+      <p class="lead">Custom birthday, wedding and celebration cakes, baked to order in Kempton Park. Tell us the day, the number of people and the look you want. We do the rest.</p>
+      <div class="cta">
+        <a class="btn btn-fill" href="https://wa.me/27614518465?text=Hi%20Cakes%20with%20grace%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3c.2-.6.2-1.1.2-1.3l-.6-.3z"/></svg>
+          Ask on WhatsApp</a>
+        <a class="btn btn-line" href="tel:+27614518465">Call 061 451 8465</a>
+      </div>
+      <a class="rating" href="https://www.google.com/maps/place/Cakes+with+grace/data=!4m7!3m6!1s0x1e9515ade49c2cc7:0xc47fcf1bee1fd6e8!8m2!3d-26.1044909!4d28.2367611!16s%2Fg%2F11mwsjvjsd!19sChIJxyyc5K0VlR4R6NYf7hvPf8Q" target="_blank" rel="noopener"><span class="stars">★★★★★</span> 5.0 on Google <small>(25 reviews)</small></a>
+    </div>
+
+    <form class="planner" id="plan" aria-labelledby="plan-h" onsubmit="return false">
+      <h2 id="plan-h">Plan your cake</h2>
+      <p class="sub">Three answers and we know what to bake. It writes the WhatsApp message for you.</p>
+
+      <label for="occ">The occasion</label>
+      <select id="occ">
+        <option value="birthday">Birthday</option>
+        <option value="kids">Kids' party</option>
+        <option value="wedding">Wedding</option>
+        <option value="baby">Baby shower or christening</option>
+        <option value="corporate">Office or year-end</option>
+        <option value="other">Something else</option>
+      </select>
+
+      <label for="serv"><span class="serv">How many people <output id="servOut" for="serv">20</output></span></label>
+      <input type="range" id="serv" min="6" max="120" step="2" value="20">
+
+      <label for="when">The day</label>
+      <input type="date" id="when">
+
+      <div class="tiers" id="tiers" aria-hidden="true"></div>
+      <div class="result" id="result" aria-live="polite"></div>
+
+      <a class="btn btn-fill" id="go" href="https://wa.me/27614518465?text=Hi%20Cakes%20with%20grace%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote." target="_blank" rel="noopener">Send this on WhatsApp</a>
+      <p class="note">Sizes and lead times are a guide. The owner confirms the price after seeing your picture.</p>
+    </form>
+  </section>
+
+  <section class="wrap bake" id="bake">
+    <h2>What we bake</h2>
+    <ol><li><span class="mn">Birthday cakes</span><span class="ml" aria-hidden="true"></span><span class="mm">from 8 servings</span><small>Any theme, any age. Send a picture of what you have in mind.</small></li><li><span class="mn">Wedding cakes</span><span class="ml" aria-hidden="true"></span><span class="mm">2 to 4 tiers</span><small>Tasting first, then the design. Delivered and set up at the venue.</small></li><li><span class="mn">Number and letter cakes</span><span class="ml" aria-hidden="true"></span><span class="mm">1 or 2 digits</span><small>Cream, fruit and chocolate on top, the way the photos look.</small></li><li><span class="mn">Cupcakes</span><span class="ml" aria-hidden="true"></span><span class="mm">boxes of 6, 12, 24</span><small>Matched to the cake, or on their own for the office.</small></li><li><span class="mn">Baby showers and christenings</span><span class="ml" aria-hidden="true"></span><span class="mm"></span><small>Soft colours, gender reveal inside if you want it.</small></li><li><span class="mn">Corporate and year-end</span><span class="ml" aria-hidden="true"></span><span class="mm">logo on top</span><small>Big slab cakes and branded cupcakes for the team.</small></li></ol>
+    <p class="note">Flavours: vanilla, chocolate, red velvet, carrot, lemon. Ask about anything else.</p>
+  </section>
+
+  <section class="hours" aria-label="Opening hours">
+    <div class="wrap">
+      <div class="lead">Collect early or late:</div>
+      <div><b>06:00 – 19:00</b><span>Monday – Saturday</span></div><div><b>06:00 – 19:00</b><span>Sunday</span></div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="wrap">
+      <div>
+        <h2>About the bakery</h2>
+        <p>Cakes with grace is a small, owner-run cake bakery on Kempton Road, Kempton Park. Reviews mention the same two things: the cakes look like the picture, and the owner replies quickly and patiently. Sizes, lead times and prices on this page are a guide, to be confirmed by the owner.</p>
+      </div>
+      <ul><li>5.0 stars from 25 Google reviews, every one of them</li><li>One baker, start to finish: the person who answers your message makes your cake</li><li>Open 06:00 to 19:00, so you can collect before work or after</li><li>Patient with the details: send pictures, change your mind, ask again</li></ul>
+    </div>
+  </section>
+
+  <section class="find" id="find">
+    <div class="wrap">
+      <div>
+        <h2>Find us</h2>
+        <address>
+          Kempton Rd, Kempton Park<br>
+          <a href="tel:+27614518465">061 451 8465</a>
+          <a href="mailto:cakeswithgrace.gso@gmail.com">cakeswithgrace.gso@gmail.com</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Cakes%20with%20grace%2C%20Kempton%20Rd%2C%20Kempton%20Park" target="_blank" rel="noopener">Open in Google Maps</a>
+        </address>
+      </div>
+      <iframe title="Map to Cakes with grace" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=Cakes%20with%20grace%2C%20Kempton%20Rd%2C%20Kempton%20Park&z=16&output=embed"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">Cakes with grace, Kempton Park. 2026.</div></footer>
+
+<nav class="tapbar" aria-label="Quick contact">
+  <a class="wa" href="https://wa.me/27614518465?text=Hi%20Cakes%20with%20grace%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote." target="_blank" rel="noopener">WhatsApp</a>
+  <a class="call" href="tel:+27614518465">Call</a>
+</nav>
+<div class="demo">Demo site made by Lourens Terblanche. Not live yet: details to be confirmed with the owner.</div>
+
+<script>
+(()=>{
+  const n=document.querySelector('.demo'),f=()=>document.documentElement.style.setProperty('--demo-h',n.offsetHeight+'px');f();addEventListener('resize',f);
+  // The planner. Sizes are the usual baker's guide; lead times are placeholders until the owner confirms.
+  const occ=document.getElementById('occ'), serv=document.getElementById('serv'), out=document.getElementById('servOut'),
+        when=document.getElementById('when'), res=document.getElementById('result'), tiers=document.getElementById('tiers'), go=document.getElementById('go');
+  const names={birthday:'birthday cake',kids:"kids' party cake",wedding:'wedding cake',baby:'baby shower cake',corporate:'office cake',other:'cake'};
+  const lead={wedding:21,corporate:7,birthday:5,kids:5,baby:5,other:5};
+  const size=p=> p<=8?{t:1,s:'one 15 cm cake',w:[52]} : p<=16?{t:1,s:'one 20 cm cake',w:[66]} : p<=28?{t:1,s:'one 25 cm cake',w:[80]}
+              : p<=45?{t:2,s:'two tiers, 15 and 23 cm',w:[48,76]} : p<=80?{t:3,s:'three tiers, 15, 20 and 25 cm',w:[40,62,84]} : {t:4,s:'four tiers, or a cake plus cupcakes',w:[34,52,70,88]};
+  const today=new Date(); today.setHours(0,0,0,0);
+  const iso=d=>d.toISOString().slice(0,10);
+  const pretty=d=>d.toLocaleDateString('en-ZA',{weekday:'short',day:'numeric',month:'long'});
+  const d0=new Date(today); d0.setDate(d0.getDate()+14); when.value=iso(d0); when.min=iso(today);
+  function upd(){
+    const p=+serv.value, o=occ.value, s=size(p); out.textContent=p;
+    tiers.innerHTML=s.w.map(w=>`<i style="--w:${w}%"></i>`).join('')+'<span class="stand"></span>';
+    const day=when.value?new Date(when.value+'T00:00:00'):null;
+    let line='', ok=true;
+    if(day){ const by=new Date(day); by.setDate(by.getDate()-lead[o]);
+      if(by<today){ ok=false; line=`<span class="warn">That is inside our usual ${lead[o]}-day lead time for a ${names[o]}. Message us anyway, sometimes there is a gap.</span>`; }
+      else line=`Order by <b style="display:inline;font-size:1em">${pretty(by)}</b> for ${pretty(day)}.`; }
+    res.innerHTML=`<b>${s.s[0].toUpperCase()+s.s.slice(1)} for ${p} people</b>${line}`;
+    const msg=`Hi Cakes with grace, I'd like a ${names[o]} for about ${p} people${day?' on '+pretty(day):''}. ${s.s[0].toUpperCase()+s.s.slice(1)}? I'll send a picture of the look I want.`;
+    go.href='https://wa.me/27614518465?text='+encodeURIComponent(msg);
+  }
+  [occ,serv,when].forEach(e=>e.addEventListener('input',upd)); upd();
+})();
+</script>
+</body>
+</html>

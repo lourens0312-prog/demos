@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="af">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Komproe Tuisnywerheid | Tuisnywerheid, Van Riebeeck Park, Kempton Park</title>
+<meta name="description" content="Tuisgebak soos by die huis. Verjaarsdagkoeke, kolwyntjies, melktert en koffie, al meer as 20 jaar in Van Riebeeck Park. Bestel jou koek op WhatsApp, ons bak dit vars.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400;9..144,600;9..144,700,100&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blou: #1F4E9C; --blou-diep: #163A75; --ink: #1B2A41; --wit: #FFFFFF; --lyn: #D6DEEB;
+    --konfyt: #B4324F; --room: #F4F6FA; --grys: #5B6878;
+    --demo-h: 2.4rem;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: Karla, system-ui, sans-serif; color: var(--ink); background: var(--wit); line-height: 1.55; padding-bottom: 4.5rem; }
+  h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 600; line-height: 1.08; margin: 0; letter-spacing: -.01em; }
+  a { color: var(--blou); }
+  .wrap { width: min(1120px, 100% - 2.5rem); margin: 0 auto; }
+  .en { color: var(--grys); font-size: .95em; }
+  .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .85rem 1.25rem; border-radius: 6px; font-weight: 700; text-decoration: none; border: 2px solid transparent; }
+  .btn-wa { background: var(--blou); color: var(--wit); }
+  .btn-wa:hover { background: var(--blou-diep); }
+  .btn-line { border-color: var(--blou); color: var(--blou); background: var(--wit); }
+
+  /* gingham: the kitchen tablecloth. Two translucent stripe layers cross into checks. */
+  .gingham {
+    background-color: var(--wit);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(31,78,156,.28) 0 14px, transparent 14px 28px),
+      repeating-linear-gradient(90deg, rgba(31,78,156,.28) 0 14px, transparent 14px 28px);
+  }
+
+  .top { position: sticky; top: 0; z-index: 5; background: var(--wit); border-bottom: 1px solid var(--lyn); }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .7rem 0; }
+  .brand { font-family: Fraunces, serif; font-weight: 700; font-size: 1.25rem; color: var(--ink); text-decoration: none; }
+  .brand small { display: block; font-family: Karla, sans-serif; font-weight: 500; font-size: .72rem; color: var(--grys); letter-spacing: .02em; }
+  .top nav { display: flex; gap: 1.25rem; align-items: center; }
+  .top nav a { text-decoration: none; color: var(--ink); font-weight: 500; }
+  .top nav .btn { padding: .55rem .9rem; white-space: nowrap; }
+
+  .hero { padding: 3rem 0 2.5rem; }
+  .hero .wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: 3rem; align-items: start; }
+  .hero h1 { font-size: clamp(2.4rem, 5.2vw, 4.2rem); }
+  .hero h1 em { font-style: italic; font-weight: 400; color: var(--blou); font-variation-settings: "SOFT" 100; }
+  .hero .lead { font-size: 1.15rem; margin: 1.1rem 0 .4rem; max-width: 34rem; }
+  .hero .lead-en { margin: 0 0 1.4rem; max-width: 34rem; }
+  .cta { display: flex; gap: .75rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+  .rating { display: inline-flex; align-items: center; gap: .5rem; text-decoration: none; color: var(--ink); font-weight: 500; }
+  .rating .stars { color: var(--konfyt); letter-spacing: .05em; }
+  .rating small { color: var(--grys); }
+
+  /* the order slip */
+  .slip { background: var(--wit); border: 1px solid var(--lyn); border-radius: 10px; overflow: hidden; box-shadow: 0 14px 40px rgba(27,42,65,.10); }
+  .slip-head { padding: 1rem 1.25rem .9rem; border-bottom: 1px dashed var(--lyn); }
+  .slip-head .gingham-strip { height: 10px; margin: -1rem -1.25rem .9rem; }
+  .slip-head h2 { font-size: 1.5rem; }
+  .slip-head p { margin: .2rem 0 0; color: var(--grys); font-size: .92rem; }
+  .slip form { padding: 1rem 1.25rem 1.25rem; display: grid; gap: .85rem; }
+  .slip label { display: grid; gap: .3rem; font-weight: 700; font-size: .9rem; }
+  .slip label span small { font-weight: 400; color: var(--grys); }
+  .slip select, .slip input { font: inherit; padding: .65rem .75rem; border: 1px solid var(--lyn); border-radius: 6px; background: var(--room); color: var(--ink); width: 100%; }
+  .slip .two { display: grid; grid-template-columns: 1fr 1fr; gap: .85rem; }
+  .slip .chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+  .slip .chips input { position: absolute; opacity: 0; width: 0; height: 0; }
+  .slip .chips label { display: inline-block; border: 1px solid var(--lyn); border-radius: 999px; padding: .35rem .8rem; font-weight: 500; cursor: pointer; background: var(--wit); }
+  .slip .chips input:checked + label { background: var(--blou); color: var(--wit); border-color: var(--blou); }
+  .slip .chips input:focus-visible + label { outline: 3px solid var(--konfyt); outline-offset: 2px; }
+  .slip button { font: inherit; font-weight: 700; padding: .9rem 1rem; border: 0; border-radius: 6px; background: var(--konfyt); color: var(--wit); cursor: pointer; }
+  .slip button:hover { background: #952740; }
+  .slip .note { margin: 0; font-size: .82rem; color: var(--grys); }
+  .slip .tear { height: 12px; background: radial-gradient(circle at 6px -2px, transparent 6px, var(--wit) 6.5px) 0 0 / 12px 12px repeat-x; border-top: 1px solid var(--lyn); }
+
+  section { padding: 3rem 0; }
+  .sec-head { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .sec-head h2 { font-size: 2rem; }
+  .sec-head .en { font-size: 1.05rem; }
+
+  .bak { background: var(--room); }
+  .menu { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 3rem; }
+  .menu li { display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: .5rem; padding: .9rem 0; border-bottom: 1px solid var(--lyn); }
+  .menu .mn { font-family: Fraunces, serif; font-size: 1.2rem; font-weight: 600; }
+  .menu .ml { border-bottom: 2px dotted #B9C3D4; transform: translateY(-5px); }
+  .menu .mm { color: var(--blou); font-weight: 700; font-size: .85rem; white-space: nowrap; }
+  .menu small { grid-column: 1 / -1; color: var(--grys); font-size: .92rem; }
+
+  .ure { padding: 0; }
+  .ure .band { padding: 1.6rem 0; }
+  .ure .wrap { display: grid; grid-template-columns: auto 1fr 1fr 1fr; gap: 1.5rem; align-items: center; background: var(--wit); padding: 1.25rem 1.5rem; border-radius: 10px; }
+  .ure h2 { font-size: 1.4rem; }
+  .ure div b { display: block; font-family: Fraunces, serif; font-size: 1.35rem; font-weight: 600; }
+  .ure div span { color: var(--grys); font-size: .9rem; }
+
+  .oor .wrap { display: grid; grid-template-columns: 1.2fr .8fr; gap: 3rem; }
+  .oor ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .6rem; }
+  .oor li { padding-left: 1.5rem; position: relative; }
+  .oor li::before { content: ""; position: absolute; left: 0; top: .5em; width: .7rem; height: .7rem; background: var(--blou); border-radius: 2px; }
+
+  .vind { background: var(--room); }
+  .vind .wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 2rem; align-items: stretch; }
+  .vind address { font-style: normal; display: grid; gap: .5rem; align-content: start; }
+  .vind iframe { width: 100%; min-height: 320px; height: 100%; border: 0; border-radius: 10px; }
+
+  footer { padding: 1.5rem 0 1rem; color: var(--grys); font-size: .9rem; }
+
+  .tapbar { display: none; }
+  .demo { position: fixed; left: 0; right: 0; bottom: 0; z-index: 7; background: #111; color: #eee; font-size: .8rem; text-align: center; padding: .55rem .75rem; }
+
+  @media (max-width: 860px) {
+    .top nav a:not(.btn) { display: none; }
+    .brand small { display: none; }
+    .hero { padding-top: 2rem; }
+    .hero .wrap, .oor .wrap, .vind .wrap { grid-template-columns: 1fr; gap: 1.5rem; }
+    .menu { grid-template-columns: 1fr; }
+    .ure .wrap { grid-template-columns: 1fr 1fr; }
+    .ure h2 { grid-column: 1 / -1; }
+    .tapbar { display: grid; grid-template-columns: 1fr 1fr; position: fixed; left: 0; right: 0; bottom: var(--demo-h, 2.4rem); z-index: 6; }
+    .tapbar a { display: flex; justify-content: center; align-items: center; gap: .5rem; padding: 1rem; font-weight: 700; text-decoration: none; }
+    .tapbar .wa { background: #25d366; color: #0b2e1a; }
+    .tapbar .call { background: var(--blou); color: var(--wit); }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">Komproe Tuisnywerheid<small>Tuisnywerheid · Home industry · Van Riebeeck Park</small></a>
+    <nav>
+      <a href="#bak">Wat ons bak</a>
+      <a href="#ure">Ure</a>
+      <a href="#vind">Vind ons</a>
+      <a class="btn btn-wa" href="#bestel">Bestel &#x27;n koek</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Tuisgebak <em>soos by die huis,</em> in Van Riebeeck Park.</h1>
+        <p class="lead">Verjaarsdagkoeke, kolwyntjies, melktert en koffie, al meer as 20 jaar in Van Riebeeck Park. Bestel jou koek op WhatsApp, ons bak dit vars.</p>
+        <p class="lead-en en">Home-baked cakes, cupcakes, milk tart and coffee in Kempton Park for over 20 years. Order your cake on WhatsApp.</p>
+        <div class="cta">
+          <a class="btn btn-wa" href="https://wa.me/27119762597?text=Hallo%20Komproe%2C%20ek%20wil%20graag%20%27n%20koek%20bestel." target="_blank" rel="noopener">Bestel op WhatsApp</a>
+          <a class="btn btn-line" href="tel:+27119762597">Bel 011 976 2597</a>
+        </div>
+        <a class="rating" href="https://www.google.com/maps/place/Komproe+Tuisnywerheid/@-26.0801475,28.2206221,17z/data=!4m6!3m5!1s0x1e9514abec4534a9:0xe5dbbac902768368!8m2!3d-26.0801475!4d28.2206221!16s%2Fg%2F11b7q93hr0" target="_blank" rel="noopener"><span class="stars">★★★★★</span> 4.3 on Google <small>(120 reviews)</small></a>
+      </div>
+
+      <div class="slip" id="bestel">
+        <div class="slip-head">
+          <div class="gingham gingham-strip"></div>
+          <h2>Bestelkaartjie</h2>
+          <p>Vul in, druk die knoppie, en jou bestelling staan klaar in WhatsApp. <span class="en">Order slip: fill it in and it writes your WhatsApp order.</span></p>
+        </div>
+        <form id="slipform">
+          <label><span>Geleentheid <small>/ occasion</small></span>
+            <select name="geleentheid">
+              <option>Verjaarsdag</option><option>Doop</option><option>Troue</option><option>Kantoor</option><option>Kerk of troos</option><option>Sommer net</option>
+            </select>
+          </label>
+          <div class="two">
+            <label><span>Hoeveel mense <small>/ people</small></span><input type="number" name="mense" min="1" value="20"></label>
+            <label><span>Wanneer <small>/ date</small></span><input type="date" name="datum"></label>
+          </div>
+          <label><span>Smaak <small>/ flavour</small></span>
+            <span class="chips">
+              <input type="radio" name="smaak" id="s1" value="vanielje" checked><label for="s1">Vanielje</label>
+              <input type="radio" name="smaak" id="s2" value="sjokolade"><label for="s2">Sjokolade</label>
+              <input type="radio" name="smaak" id="s3" value="rooi fluweel"><label for="s3">Rooi fluweel</label>
+              <input type="radio" name="smaak" id="s4" value="karamel"><label for="s4">Karamel</label>
+              <input type="radio" name="smaak" id="s5" value="verras my"><label for="s5">Verras my</label>
+            </span>
+          </label>
+          <label><span>Jou naam <small>/ your name</small></span><input type="text" name="naam" placeholder="Maryna" autocomplete="name"></label>
+          <button type="submit">Stuur bestelling op WhatsApp</button>
+          <p class="note">Ons bevestig prys en afhaaltyd op WhatsApp. Koeke: bestel asseblief 3 dae vooruit.</p>
+        </form>
+        <div class="tear"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bak" id="bak">
+    <div class="wrap">
+      <div class="sec-head"><h2>Wat ons bak</h2><span class="en">What we bake</span></div>
+      <ul class="menu"><li><span class="mn">Verjaarsdagkoeke</span><span class="ml" aria-hidden="true"></span><span class="mm">bestel 3 dae vooruit</span><small>Custom birthday cakes. Jou tema, jou smaak, groot genoeg vir die hele partytjie.</small></li><li><span class="mn">Kolwyntjies</span><span class="ml" aria-hidden="true"></span><span class="mm">ook op kort kennisgewing</span><small>Cupcakes, per dosyn. Vir die skool, die kantoor of die doop.</small></li><li><span class="mn">Melktert en koeksisters</span><span class="ml" aria-hidden="true"></span><span class="mm">op die rak</span><small>Milk tart and koeksisters, baked here, on the shelf most days.</small></li><li><span class="mn">Beskuit</span><span class="ml" aria-hidden="true"></span><span class="mm">op die rak</span><small>Rusks for the coffee. Karringmelk en muesli.</small></li><li><span class="mn">Pasteie en soutgebak</span><span class="ml" aria-hidden="true"></span><span class="mm">op die rak</span><small>Pies and savouries for lunch or the braai.</small></li><li><span class="mn">Koffie en kinderhoekie</span><span class="ml" aria-hidden="true"></span><span class="mm">sit en kuier</span><small>Coffee while you shop, and a corner for the kids.</small></li></ul>
+    </div>
+  </section>
+
+  <section class="ure gingham" id="ure">
+    <div class="band"><div class="wrap"><h2>Oop · Open</h2><div><b>08:00 – 17:00</b><span>Maandag – Vrydag</span></div><div><b>08:00 – 13:00</b><span>Saterdag</span></div><div><b>Gesluit</b><span>Sondag</span></div></div></div>
+  </section>
+
+  <section class="oor">
+    <div class="wrap">
+      <div>
+        <div class="sec-head"><h2>Oor ons</h2><span class="en">About us</span></div>
+        <p>Komproe Tuisnywerheid is &#x27;n tuisnywerheid in Soutpansbergrylaan, Van Riebeeck Park, in &#x27;n huis wat &#x27;n winkel geword het. Home industry in Van Riebeeck Park, Kempton Park. Produkte en pryse op hierdie blad moet nog deur die eienaar bevestig word.</p>
+      </div>
+      <ul><li>4.3 sterre uit 120 Google resensies</li><li>Meer as 20 jaar in Van Riebeeck Park</li><li>Alles word hier gebak, nie aangery nie</li><li>Bestel op WhatsApp, kom haal by die deur</li></ul>
+    </div>
+  </section>
+
+  <section class="vind" id="vind">
+    <div class="wrap">
+      <address>
+        <div class="sec-head"><h2>Vind ons</h2><span class="en">Find us</span></div>
+        <span>105 Soutpansberg Dr, Van Riebeeck Park, Kempton Park</span>
+        <a href="tel:+27119762597">011 976 2597</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=105%20Soutpansberg%20Dr%2C%20Van%20Riebeeck%20Park%2C%20Kempton%20Park" target="_blank" rel="noopener">Maak oop in Google Maps</a>
+        <span class="en">Parkeer voor die huis. Park in front of the house.</span>
+      </address>
+      <iframe title="Kaart na Komproe Tuisnywerheid" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=105%20Soutpansberg%20Dr%2C%20Van%20Riebeeck%20Park%2C%20Kempton%20Park&z=16&output=embed"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">Komproe Tuisnywerheid, Van Riebeeck Park, Kempton Park. 2026.</div></footer>
+
+<nav class="tapbar" aria-label="Kontak">
+  <a class="wa" href="https://wa.me/27119762597?text=Hallo%20Komproe%2C%20ek%20wil%20graag%20%27n%20koek%20bestel." target="_blank" rel="noopener">WhatsApp</a>
+  <a class="call" href="tel:+27119762597">Bel</a>
+</nav>
+<div class="demo">Demo site made by Lourens Terblanche. Not live yet: details to be confirmed with the owner.</div>
+<script>
+(()=>{const n=document.querySelector('.demo'),f=()=>document.documentElement.style.setProperty('--demo-h',n.offsetHeight+'px');f();addEventListener('resize',f);})();
+document.getElementById('slipform').addEventListener('submit', e => {
+  e.preventDefault();
+  const d = new FormData(e.target);
+  const datum = d.get('datum') ? new Date(d.get('datum')).toLocaleDateString('af-ZA', { day: 'numeric', month: 'long' }) : 'datum nog oop';
+  const naam = (d.get('naam') || '').trim();
+  const text = `Hallo Komproe, ek wil graag 'n koek bestel.\n${d.get('geleentheid')}, ${d.get('mense')} mense, ${datum}, ${d.get('smaak')}.` + (naam ? `\nGroete, ${naam}` : '');
+  window.open('https://wa.me/27119762597?text=' + encodeURIComponent(text), '_blank', 'noopener');
+});
+</script>
+</body>
+</html>
