@@ -98,6 +98,18 @@
   .steps h3 { margin: 0 0 .3rem; font-size: 1.15rem; }
   .steps p { margin: 0; color: #E6EAF2; }
 
+  /* Proof: six jobs from their Google photos in a silver-gapped grid, three reviews with the amber top rule. */
+  .jobs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--silver); border: 1px solid var(--silver); }
+  @media (min-width: 760px) { .jobs { grid-template-columns: repeat(6, 1fr); } }
+  .jobs img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; display: block; background: var(--chalk); }
+  .said { list-style: none; margin: 2.5rem 0 0; padding: 0; display: grid; gap: 1.5rem; }
+  @media (min-width: 760px) { .said { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
+  .said li { border-top: 2px solid var(--amber); padding-top: 1rem; }
+  .said blockquote { margin: 0; font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 1.2rem; line-height: 1.25; }
+  .said cite { display: block; font-style: normal; margin-top: .6rem; font-size: .9rem; color: var(--muted); }
+  .tally { margin: 2rem 0 0; font-weight: 600; }
+  .tally a { color: var(--night); }
+
   .where { display: grid; gap: 2rem; }
   @media (min-width: 900px) { .where { grid-template-columns: 1fr 1fr; align-items: start; } }
   .hours { display: grid; gap: .75rem; margin: 1rem 0 1.5rem; }
@@ -180,13 +192,23 @@
   </div>
 </section>
 
+<section class="block" id="proof" aria-labelledby="proof-h">
+  <div class="wrap">
+    <h2 id="proof-h">Jobs done where the car stood</h2>
+    <p class="lead">Photos from their Google listing: suspension, clutches, engines and the scanner that reads the codes. Thirteen Google reviews, 4.9 stars, most of them from the last three months.</p>
+    <ul class="jobs"><li><img src="img/job1.jpg" alt="Before and after: a worn suspension part replaced on site" loading="lazy" width="640" height="640"></li><li><img src="img/job2.jpg" alt="Diagnostic scanner reading the fault codes" loading="lazy" width="640" height="640"></li><li><img src="img/job3.jpg" alt="Mechanic working on a Kia on the owner's driveway" loading="lazy" width="640" height="640"></li><li><img src="img/job4.jpg" alt="BMW engine bay opened up for a repair" loading="lazy" width="640" height="640"></li><li><img src="img/job5.jpg" alt="Cylinder head stripped for a top-end rebuild" loading="lazy" width="640" height="640"></li><li><img src="img/job6.jpg" alt="Clutch and flywheel out of the car" loading="lazy" width="640" height="640"></li></ul>
+    <ol class="said"><li><blockquote>“Honest, fast, and very professional. They diagnosed my car correctly the first time and price was fair.”</blockquote><cite>Nosipho, Google review</cite></li><li><blockquote>“From submitting the quote to finishing the job they were really on top of everything.”</blockquote><cite>Louis, Google review</cite></li><li><blockquote>“Super professional, honest about costs and very friendly. He diagnosed the issue fast and even showed me what was causing the problem.”</blockquote><cite>Percy, Google review</cite></li></ol>
+    <p class="tally">★ 4.9 on Google from 13 reviews · <a href="https://www.facebook.com/p/Carcodes-Motor-Works-100083195978987/" target="_blank" rel="noopener">Car'codes Motor Works on Facebook</a></p>
+  </div>
+</section>
+
 <section class="block" id="where-we-are">
   <div class="wrap where">
     <div>
       <h2>Hours and base</h2>
       <div class="hours"><div><b>24 hours</b><span>Every day</span></div><div><b>Ask for the rate first</b><span>Night call-outs</span></div></div>
       <p class="addr">Based at 11 Highveld Rd, Kempton Park, 1620. We don't need you to come here: we come to you.</p>
-      <p>CARCODES is a small Kempton Park team that fixes cars where they stand. Reviews call us the best mechanics in Kempton and praise fast on-site fitting. Send us your location and what happened, and we tell you what we can do and what it will cost before we leave.</p>
+      <p>CARCODES is a small Kempton Park team that fixes cars where they stand. Reviews call us the best mechanics in Kempton and say the same three things: honest about the cost, fast to diagnose, and the problem is shown to you before it is fixed. Send us your location and what happened, and we tell you what we can do and what it will cost before we leave.</p>
     </div>
     <iframe class="map" title="Map of CARCODES Mobile Mechanic" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=11%20Highveld%20Rd%2C%20Kempton%20Park%2C%201620&output=embed"></iframe>
   </div>
