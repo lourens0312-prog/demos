@@ -105,7 +105,7 @@
   /* Mobile: the two taps that matter stay on screen. */
   .tapbar { display: none; }
   @media (max-width: 700px) {
-    .tapbar { display: grid; grid-template-columns: 1fr 1fr; position: fixed; left: 0; right: 0; bottom: 2.4rem; z-index: 6; }
+    .tapbar { display: grid; grid-template-columns: 1fr 1fr; position: fixed; left: 0; right: 0; bottom: var(--demo-h, 2.4rem); z-index: 6; }
     .tapbar a { display: flex; justify-content: center; align-items: center; gap: .5rem; padding: 1rem; font-weight: 700; text-decoration: none; }
     .tapbar .wa { background: #25d366; color: #0b2e1a; }
     .tapbar .call { background: var(--navy); color: var(--chalk); }
@@ -193,5 +193,6 @@
   <a class="call" href="tel:+27100234483">Call</a>
 </nav>
 <div class="demo">Demo site made by Lourens Terblanche. Not live yet: details to be confirmed with the owner.</div>
+<script>(()=>{const n=document.querySelector('.demo'),f=()=>document.documentElement.style.setProperty('--demo-h',n.offsetHeight+'px');f();addEventListener('resize',f);})();</script>
 </body>
 </html>

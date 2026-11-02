@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Kempton Biltong Co. | Sample online shop</title>
+<meta name="description" content="Sample Shop-tier site: products, card payment links and WhatsApp orders.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #e6d5b8; --black: #1c1a17; --red: #8b1e1e; --white: #fffdf8; --tan: #c9b48f;
+    --head: "Alfa Slab One", Rockwell, serif; --body: "Inter Tight", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 400 1.0625rem/1.5 var(--body); color: var(--black); background: var(--paper); }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+  .wrap { width: min(1100px, 100% - 2.5rem); margin-inline: auto; }
+  h1, h2, h3 { font-family: var(--head); font-weight: 400; letter-spacing: 0; margin: 0; }
+
+  header { background: var(--black); color: var(--paper); }
+  .bar { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; gap: 1rem; }
+  .brand { font-family: var(--head); font-size: 1.4rem; text-decoration: none; }
+  .bar nav a { text-decoration: none; margin-left: 1.25rem; }
+  .cartbtn { background: var(--red); color: var(--white); border: 0; font: 600 1rem var(--body); padding: .65rem 1rem; border-radius: 3px; cursor: pointer; }
+  @media (max-width: 700px) { .bar nav a:not(.cartbtn) { display: none; } }
+
+  .hero { padding: 3rem 0 2.5rem; display: grid; grid-template-columns: 1.1fr .9fr; gap: 2rem; align-items: end; }
+  .hero h1 { font-size: clamp(2.4rem, 5.5vw, 4.25rem); line-height: 1.02; }
+  .hero p { font-size: 1.15rem; max-width: 42ch; margin: 1rem 0 0; }
+  .ship { background: var(--white); border: 2px solid var(--black); padding: 1rem 1.25rem; font-size: .95rem; }
+  .ship b { display: block; font-size: 1.05rem; }
+  @media (max-width: 800px) { .hero { grid-template-columns: 1fr; } }
+
+  /* The shop: price tags on butcher paper. */
+  .shop { padding: 1rem 0 3.5rem; }
+  .shop h2 { font-size: 1.6rem; margin-bottom: 1rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1.25rem; }
+  .item { background: var(--white); border: 2px solid var(--black); display: flex; flex-direction: column; }
+  .item .pic { aspect-ratio: 4 / 3; background: var(--tan); display: grid; place-items: center; color: var(--black); font-size: .85rem; border-bottom: 2px solid var(--black); }
+  .item .body { padding: .9rem 1rem 1rem; display: flex; flex-direction: column; gap: .4rem; flex: 1; }
+  .item h3 { font-size: 1.15rem; font-family: var(--body); font-weight: 600; }
+  .item p { margin: 0; font-size: .95rem; color: #4a443b; flex: 1; }
+  .tag { font-family: var(--head); font-size: 1.3rem; }
+  .tag small { font-family: var(--body); font-size: .85rem; color: #4a443b; }
+  .buy { display: flex; gap: .5rem; margin-top: .25rem; }
+  .buy button, .buy a { flex: 1; font: 600 .95rem var(--body); padding: .6rem .5rem; border-radius: 3px; cursor: pointer; text-align: center; text-decoration: none; }
+  .buy .card { background: var(--black); color: var(--paper); border: 2px solid var(--black); }
+  .buy .add { background: var(--white); color: var(--black); border: 2px solid var(--black); }
+  .buy .add:hover, .buy .card:hover { background: var(--red); color: var(--white); border-color: var(--red); }
+
+  .how { background: var(--black); color: var(--paper); padding: 3rem 0; }
+  .how .wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .how h2 { grid-column: 1 / -1; font-size: 1.6rem; }
+  .how h3 { font-family: var(--body); font-weight: 600; font-size: 1.1rem; margin-bottom: .35rem; }
+  .how p { margin: 0; color: #cbbfa6; }
+  @media (max-width: 700px) { .how .wrap { grid-template-columns: 1fr; gap: 1.25rem; } }
+
+  .find { padding: 3rem 0 6rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .find h2 { font-size: 1.6rem; margin-bottom: .75rem; }
+  .find address { font-style: normal; }
+  .find address a { display: block; margin-top: .3rem; }
+  .find table { border-collapse: collapse; margin-top: .75rem; }
+  .find th, .find td { text-align: left; padding: .3rem 1.5rem .3rem 0; font-weight: 400; }
+  @media (max-width: 700px) { .find { grid-template-columns: 1fr; } }
+
+  /* Cart drawer */
+  .cart { position: fixed; top: 0; right: 0; bottom: 0; width: min(420px, 100%); background: var(--white); border-left: 2px solid var(--black);
+    transform: translateX(100%); transition: transform .25s ease; z-index: 20; display: flex; flex-direction: column; }
+  .cart.open { transform: none; }
+  @media (prefers-reduced-motion: reduce) { .cart { transition: none; } }
+  .cart header { background: var(--white); color: var(--black); padding: 1rem 1.25rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--black); }
+  .cart h2 { font-size: 1.3rem; }
+  .cart .x { background: none; border: 0; font: 600 1rem var(--body); cursor: pointer; }
+  .cart ul { list-style: none; margin: 0; padding: 1rem 1.25rem; flex: 1; overflow: auto; }
+  .cart li { display: flex; justify-content: space-between; gap: 1rem; padding: .5rem 0; border-bottom: 1px solid var(--tan); }
+  .cart li button { background: none; border: 0; color: var(--red); cursor: pointer; font: 500 .9rem var(--body); }
+  .cart .empty { color: #4a443b; }
+  .cart footer { padding: 1rem 1.25rem 1.25rem; border-top: 2px solid var(--black); }
+  .cart .total { display: flex; justify-content: space-between; font-family: var(--head); font-size: 1.25rem; margin-bottom: .75rem; }
+  .cart footer a, .cart footer button { display: block; width: 100%; text-align: center; padding: .8rem; font: 600 1rem var(--body); border-radius: 3px; margin-top: .5rem; text-decoration: none; cursor: pointer; }
+  .pay { background: var(--black); color: var(--paper); border: 2px solid var(--black); }
+  .wa { background: #25d366; color: #0b2e1a; border: 2px solid #25d366; }
+  .scrim { position: fixed; inset: 0; background: rgba(28,26,23,.45); z-index: 19; display: none; }
+  .scrim.open { display: block; }
+
+  dialog { border: 2px solid var(--black); padding: 1.5rem; max-width: 26rem; font-family: var(--body); background: var(--white); }
+  dialog::backdrop { background: rgba(28,26,23,.5); }
+  dialog h2 { font-size: 1.2rem; margin-bottom: .5rem; }
+  dialog button { margin-top: 1rem; }
+
+  .tapbar { display: none; }
+  @media (max-width: 700px) {
+    .tapbar { display: grid; grid-template-columns: 1fr 1fr; position: fixed; left: 0; right: 0; bottom: var(--demo-h, 2.4rem); z-index: 6; }
+    .tapbar a, .tapbar button { display: flex; justify-content: center; align-items: center; gap: .5rem; padding: 1rem; font: 600 1rem var(--body); text-decoration: none; border: 0; cursor: pointer; }
+    .tapbar .w { background: #25d366; color: #0b2e1a; }
+    .tapbar .c { background: var(--black); color: var(--paper); }
+  }
+  .demo { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; background: #111; color: #eee; font-size: .8rem; text-align: center; padding: .55rem .75rem; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#">Kempton Biltong Co.</a>
+    <nav aria-label="Page">
+      <a href="#shop">Shop</a><a href="#how">Delivery</a><a href="#find">Find us</a>
+      <button class="cartbtn" type="button" data-open-cart>Basket (<span data-count>0</span>)</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap hero">
+    <div>
+      <h1>Biltong and droëwors, cut this week.</h1>
+      <p>A sample online shop. Pick your cuts, pay by card or order on WhatsApp, collect in Kempton Park or get it couriered.</p>
+    </div>
+    <div class="ship">
+      <b>Collect in Kempton Park or courier nationwide.</b>
+      Orders before 12:00 leave the same day. Pay by card online, or EFT and WhatsApp us the proof.
+    </div>
+  </section>
+
+  <section class="wrap shop" id="shop">
+    <h2>This week's cuts</h2>
+    <div class="grid"><article class="item"><div class="pic">Photo: Traditional biltong</div><div class="body"><h3>Traditional biltong</h3><p>Silverside, coriander and vinegar. Wet, medium or dry.</p><div class="tag">R95 <small>per 250 g</small></div><div class="buy"><button type="button" class="add" data-add="Traditional biltong" data-price="95">Add to basket</button><button type="button" class="card" data-buy>Buy now</button></div></div></article><article class="item"><div class="pic">Photo: Chilli bites</div><div class="body"><h3>Chilli bites</h3><p>Thin, dry, hot. Goes fast.</p><div class="tag">R85 <small>per 250 g</small></div><div class="buy"><button type="button" class="add" data-add="Chilli bites" data-price="85">Add to basket</button><button type="button" class="card" data-buy>Buy now</button></div></div></article><article class="item"><div class="pic">Photo: Droëwors</div><div class="body"><h3>Droëwors</h3><p>Beef and lamb, thin cut, properly dried.</p><div class="tag">R80 <small>per 250 g</small></div><div class="buy"><button type="button" class="add" data-add="Droëwors" data-price="80">Add to basket</button><button type="button" class="card" data-buy>Buy now</button></div></div></article><article class="item"><div class="pic">Photo: Game biltong</div><div class="body"><h3>Game biltong</h3><p>Kudu or springbok, depending on the week.</p><div class="tag">R120 <small>per 250 g</small></div><div class="buy"><button type="button" class="add" data-add="Game biltong" data-price="120">Add to basket</button><button type="button" class="card" data-buy>Buy now</button></div></div></article><article class="item"><div class="pic">Photo: Snack packs</div><div class="body"><h3>Snack packs</h3><p>Lunchbox size, mixed cuts.</p><div class="tag">R35 <small>each</small></div><div class="buy"><button type="button" class="add" data-add="Snack packs" data-price="35">Add to basket</button><button type="button" class="card" data-buy>Buy now</button></div></div></article><article class="item"><div class="pic">Photo: Gift box</div><div class="body"><h3>Gift box</h3><p>Four cuts, wrapped, with a card.</p><div class="tag">R350 <small>1 kg mixed</small></div><div class="buy"><button type="button" class="add" data-add="Gift box" data-price="350">Add to basket</button><button type="button" class="card" data-buy>Buy now</button></div></div></article></div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <h2>How an order works</h2>
+      <div><h3>Choose and pay</h3><p>Add to the basket and pay by card. The card page is Yoco's, so your card details never touch this site.</p></div>
+      <div><h3>We pack it</h3><p>Weighed and vacuum-sealed the same day. You get a WhatsApp when it leaves.</p></div>
+      <div><h3>Collect or courier</h3><p>Collect from the shop at no charge, or courier anywhere in South Africa. Fee shown before you pay.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap find" id="find">
+    <div>
+      <h2>Find us</h2>
+      <address>
+        Sample address, Monument Road, Kempton Park
+        <a href="tel:+27000000000">000 000 0000</a>
+        <a href="https://wa.me/27000000000?text=Hi%20Kempton%20Biltong%20Co.%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote." target="_blank" rel="noopener">WhatsApp the shop</a>
+      </address>
+    </div>
+    <div>
+      <h2>Hours</h2>
+      <table><tr><th>Monday – Friday</th><td>08:00 – 17:00</td></tr><tr><th>Saturday</th><td>08:00 – 13:00</td></tr><tr><th>Sunday</th><td>Closed</td></tr></table>
+    </div>
+  </section>
+</main>
+
+<div class="scrim" data-close-cart></div>
+<aside class="cart" aria-label="Basket" aria-hidden="true">
+  <header><h2>Your basket</h2><button class="x" type="button" data-close-cart>Close</button></header>
+  <ul data-lines><li class="empty">Nothing in the basket yet.</li></ul>
+  <footer>
+    <div class="total"><span>Total</span><span data-total>R0</span></div>
+    <button class="pay" type="button" data-pay>Pay by card</button>
+    <a class="wa" data-wa-order href="https://wa.me/27000000000?text=Hi%20Kempton%20Biltong%20Co.%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote." target="_blank" rel="noopener">Order on WhatsApp instead</a>
+  </footer>
+</aside>
+
+<dialog data-paydialog>
+  <h2>Card payment</h2>
+  <p>In the live shop this button opens Yoco's secure card page with the basket total already filled in. Yoco charges the shop a small fee per sale and pays out to the shop's bank account. No card details are stored on the website.</p>
+  <button type="button" class="cartbtn" data-close-pay>Back to the basket</button>
+</dialog>
+
+<nav class="tapbar" aria-label="Quick actions">
+  <button class="c" type="button" data-open-cart>Basket (<span data-count>0</span>)</button>
+  <a class="w" href="https://wa.me/27000000000?text=Hi%20Kempton%20Biltong%20Co.%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote." target="_blank" rel="noopener">WhatsApp</a>
+</nav>
+<div class="demo">Sample shop by Lourens Terblanche. Kempton Biltong Co. is not a real business; prices are examples. Card payments shown as a demo.</div>
+
+<script>
+(() => {
+  const lines = new Map();
+  const cart = document.querySelector('.cart'), scrim = document.querySelector('.scrim');
+  const ul = document.querySelector('[data-lines]'), total = document.querySelector('[data-total]');
+  const counts = document.querySelectorAll('[data-count]');
+  const waOrder = document.querySelector('[data-wa-order]');
+  const waBase = waOrder.href.split('?')[0];
+  const rand = (n) => 'R' + n.toLocaleString('en-ZA');
+
+  function render() {
+    ul.innerHTML = '';
+    let sum = 0, qty = 0;
+    for (const [name, l] of lines) {
+      sum += l.price * l.qty; qty += l.qty;
+      const li = document.createElement('li');
+      li.innerHTML = `<span>${l.qty} × ${name}</span><span>${rand(l.price * l.qty)} <button type="button" aria-label="Remove ${name}">Remove</button></span>`;
+      li.querySelector('button').onclick = () => { lines.delete(name); render(); };
+      ul.appendChild(li);
+    }
+    if (!lines.size) ul.innerHTML = '<li class="empty">Nothing in the basket yet.</li>';
+    total.textContent = rand(sum);
+    counts.forEach(c => c.textContent = qty);
+    const msg = lines.size
+      ? 'Hi Kempton Biltong Co., I would like to order:\n' + [...lines].map(([n, l]) => `${l.qty} x ${n} (${rand(l.price * l.qty)})`).join('\n') + `\nTotal ${rand(sum)}. Collect or courier?`
+      : 'Hi Kempton Biltong Co., I would like to place an order.';
+    waOrder.href = waBase + '?text=' + encodeURIComponent(msg);
+  }
+  function open(o) {
+    cart.classList.toggle('open', o); scrim.classList.toggle('open', o);
+    cart.setAttribute('aria-hidden', String(!o));
+    if (o) cart.querySelector('.x').focus();
+  }
+  document.querySelectorAll('[data-add]').forEach(b => b.onclick = () => {
+    const name = b.dataset.add, price = Number(b.dataset.price);
+    const l = lines.get(name) || { price, qty: 0 }; l.qty++; lines.set(name, l);
+    render(); open(true);
+  });
+  document.querySelectorAll('[data-open-cart]').forEach(b => b.onclick = () => open(true));
+  document.querySelectorAll('[data-close-cart]').forEach(b => b.onclick = () => open(false));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') open(false); });
+  const dlg = document.querySelector('[data-paydialog]');
+  document.querySelectorAll('[data-pay], [data-buy]').forEach(b => b.onclick = () => dlg.showModal());
+  document.querySelector('[data-close-pay]').onclick = () => dlg.close();
+  render();
+  const note = document.querySelector('.demo');
+  const fit = () => document.documentElement.style.setProperty('--demo-h', note.offsetHeight + 'px');
+  fit(); addEventListener('resize', fit);
+})();
+</script>
+</body>
+</html>
