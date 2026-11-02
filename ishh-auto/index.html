@@ -86,6 +86,21 @@
   @media (max-width: 760px) { .why ul { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 460px) { .why ul { grid-template-columns: 1fr; } }
 
+  /* Proof: the yard and the cars from their Google photos, three reviews in condensed caps on tarmac. */
+  .proof { padding: 3.4rem 0 0; }
+  .proof h2 { margin: 0 0 .4rem; }
+  .proof .lede { color: var(--mute); max-width: 56ch; margin: 0 0 1.4rem; }
+  .yard { display: grid; grid-template-columns: repeat(6, 1fr); gap: .5rem; }
+  .yard img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; display: block; border-radius: 10px; background: var(--rule); }
+  .said { background: var(--tarmac); color: #e9ecf1; margin-top: 2.4rem; padding: 2.4rem 0; }
+  .said ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; }
+  .said li { padding-left: 1rem; border-left: 3px solid var(--amber); }
+  .said blockquote { margin: 0; font-family: var(--head); font-size: 1.45rem; font-weight: 700; line-height: 1.15; text-transform: uppercase; }
+  .said cite { display: block; font-style: normal; margin-top: .6rem; font-size: .9rem; color: #aab2bf; }
+  .said .tally { margin: 1.8rem 0 0; color: #fff; font-weight: 600; }
+  .said .tally a { color: var(--amber); }
+  @media (max-width: 760px) { .yard { grid-template-columns: repeat(3, 1fr); } .said ol { grid-template-columns: 1fr; gap: 1.2rem; } }
+
   /* Hours + find us */
   .info { padding: 3.4rem 0; }
   .info .wrap { display: grid; grid-template-columns: 1fr 1.3fr; gap: 3rem; }
@@ -118,6 +133,7 @@
     <a class="brand" href="#top">Ishh Auto Repairs</a>
     <nav aria-label="Page">
       <a href="#services">Services</a>
+      <a href="#proof">Reviews</a>
       <a href="#hours">Hours</a>
       <a href="#find">Find us</a>
       <a class="call" href="tel:+27734463629">Call 073 446 3629</a>
@@ -181,6 +197,20 @@
     <div class="wrap"><ul><li>4.7 stars on Google, and the reviews talk about the price</li><li>You get a quote before any work starts</li><li>Old parts shown to you, nothing swapped that isn&#x27;t needed</li><li>WhatsApp a photo or a sound clip, we answer the same day</li></ul></div>
   </section>
 
+  <section class="proof" id="proof" aria-labelledby="proof-h">
+    <div class="wrap">
+      <h2 id="proof-h">The yard, and what people say</h2>
+      <p class="lede">Photos from their Google listing: the yard on Rietfontein Road and the cars that come through it. Eight of the ten Google reviews are five stars.</p>
+      <div class="yard"><img src="img/shop1.jpg" alt="The Ishh Auto Repairs sign on Rietfontein Road" loading="lazy" width="640" height="640"><img src="img/shop2.jpg" alt="Nissan Navara bakkie in for work" loading="lazy" width="640" height="640"><img src="img/shop3.jpg" alt="Audi Q5 on the yard" loading="lazy" width="640" height="640"><img src="img/shop4.jpg" alt="White Audi with the bonnet up" loading="lazy" width="640" height="640"><img src="img/shop5.jpg" alt="Corsa bakkie waiting its turn" loading="lazy" width="640" height="640"><img src="img/shop6.jpg" alt="Inside the workshop" loading="lazy" width="640" height="640"></div>
+    </div>
+    <div class="said">
+      <div class="wrap">
+        <ol><li><blockquote>Very good mechanic, very reasonable prices.</blockquote><cite>Justin, Google review</cite></li><li><blockquote>The one stop place for your car repairs done professionally.</blockquote><cite>Walter, Google review</cite></li><li><blockquote>Quick service and great price!</blockquote><cite>Eric, Google review</cite></li></ol>
+        <p class="tally">★ 4.7 on Google from 10 reviews · <a href="https://www.facebook.com/Ishhauto/" target="_blank" rel="noopener">Ishh Auto Repairs on Facebook</a>, 235 followers</p>
+      </div>
+    </div>
+  </section>
+
   <section class="info" id="hours">
     <div class="wrap">
       <div>
@@ -190,7 +220,7 @@
       <div class="about" id="find">
         <h2>Find us</h2>
         <p class="addr">75A Rietfontein Rd, Boksburg West, Boksburg, 1459<br><a href="https://www.google.com/maps/search/?api=1&query=75A%20Rietfontein%20Rd%2C%20Boksburg%20West%2C%20Boksburg" target="_blank" rel="noopener">Open in Google Maps</a></p>
-        <p>Ishh Auto Repairs is a small workshop on Rietfontein Road in Boksburg West. One place for servicing, brakes, clutches, suspension and diagnostics, at a price people keep coming back for. Quotes are given before work starts and the old parts are yours to see.</p>
+        <p>Ishh Auto Repairs is a small workshop on Rietfontein Road in Boksburg West, run by Ishmael. One place for servicing, brakes, clutches, gearboxes, suspension and diagnostics, at a price people keep coming back for. Quotes are given before work starts and the old parts are yours to see. Weekend visits by appointment: call during the week.</p>
         <iframe title="Map to Ishh Auto Repairs" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
           src="https://maps.google.com/maps?q=75A%20Rietfontein%20Rd%2C%20Boksburg%20West%2C%20Boksburg&z=16&output=embed"></iframe>
       </div>
